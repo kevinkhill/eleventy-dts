@@ -22,15 +22,5 @@ $ npm install eleventy-dts
 
 ```
 
-```js
-import Eleventy from "@11ty/eleventy";
-
-try {
-	const eleventy = new Eleventy("in", "out");
-
-	eleventy.toJSON(); // Typed!
-} catch (e) {
-	console.error(e);
-}
-
-```
+## We have some types!
+![Editor Hint](https://github.com/kevinkhill/eleventy-dts/blob/main/img/hint.png?raw=true)
