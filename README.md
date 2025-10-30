@@ -11,9 +11,12 @@ $ npm install eleventy-dts
 ## Add to `tsconfig.json`
 ```json
 {
-	// ...
+	"compilerOptions":{
+		// ...
+	},
 	"files": [
-		"node_modules/eleventy-dts/"
+		// ...
+		"node_modules/eleventy-dts/src/index.d.ts"
 	]
 }
 
@@ -23,12 +26,9 @@ $ npm install eleventy-dts
 import Eleventy from "@11ty/eleventy";
 
 try {
-	const eleven = new Eleventy("in", "out");
+	const eleventy = new Eleventy("in", "out");
 
-	type A = typeof eleven;
-	//   ^?
-
-	eleven.toJSON();
+	eleventy.toJSON(); // Typed!
 } catch (e) {
 	console.error(e);
 }
