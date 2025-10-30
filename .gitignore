@@ -1,0 +1,6 @@
+node_modules
+_11ty
+.vscode
+
+*.log
+.DS_Store

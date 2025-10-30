@@ -1,0 +1,39 @@
+{
+  "name": "eleventy-dts",
+  "version": "0.0.1",
+  "description": "Eleventy Types",
+  "keywords": [
+    "eleventy"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kevinkhill/eleventy-plugin-scad"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Kevin Hill",
+    "email": "kevinkhill@gmail.com"
+  },
+  "type": "module",
+  "main": "./src/index.d.ts",
+  "scripts": {
+    "build": "tsdown",
+    "dev": "npm run start",
+    "release": "bumpp && npm publish",
+    "start": "tsdown --watch ./src",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.5",
+    "@types/node": "^24.7.1",
+    "11ty.ts": "0.0.6",
+    "np": "^10.2.0",
+    "tsx": "4.20.6",
+    "typescript": "^5.9.3",
+    "vitest": "3.2.4"
+  }
+}

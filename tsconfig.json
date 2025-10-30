@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "esnext",
+    "lib": [
+      "ES2024"
+    ],
+    "moduleResolution": "bundler",
+    "moduleDetection": "force",
+    "module": "esnext",
+    "declaration": true,
+    "noUnusedLocals": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
+    // "isolatedDeclarations": true,
+    "skipLibCheck": true,
+    "typeRoots": [
+      "src",
+      "node_modules/@types"
+    ]
+  }
+}
