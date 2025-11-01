@@ -4,9 +4,7 @@ Types for the default export from `@11ty/eleventy`
 
 
 ## Install
-```shell
-$ npm install eleventy-dts
-```
+download and copy into your project
 
 ## Add to `tsconfig.json`
 ```json
@@ -15,8 +13,8 @@ $ npm install eleventy-dts
 		// ...
 	},
 	"files": [
+		"eleventy-dts/src/index.d.ts"
 		// ...
-		"node_modules/eleventy-dts/src/index.d.ts"
 	]
 }
 
