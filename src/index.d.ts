@@ -13,14 +13,36 @@ declare module "@11ty/eleventy" {
 		loader?: "auto" | "esm" | "cjs";
 	}
 
+	interface EleventyPageJson {
+		/** The output URL route for this render */
+		url: string;
+		/** Input .scad file path */
+		inputPath: string;
+		/** Output HTML file path */
+		outputPath: string;
+		/** Raw OpenSCAD code (e.g. "cube(10);") */
+		rawInput: string;
+		/** Full rendered HTML content */
+		content: string;
+	};
+
 	class Eleventy {
+		/**
+		 * Create a new Eleventy instance with default values
+		 */
 		constructor();
+		/**
+		 * Create a new Eleventy while defining: input, output, options, and config
+		 */
 		constructor(
 			input?: string,
 			output?: string,
 			options?: EleventyOptions,
 			eleventyConfig?: TemplateConfig,
 		);
+		/**
+		 * Create a new Eleventy instance with options and config objects
+		 */
 		constructor(options?: EleventyOptions, eleventyConfig?: TemplateConfig);
 
 		// Public properties
@@ -54,7 +76,6 @@ declare module "@11ty/eleventy" {
 		get projectPackageJson(): Record<string, any>;
 		get isEsm(): boolean;
 
-		// Static
 		static getVersion(): string;
 		getVersion(): string;
 
@@ -65,11 +86,11 @@ declare module "@11ty/eleventy" {
 		resetConfig(): Promise<void>;
 
 		// Build
-		write(subtype?: string): Promise<any[]>;
+		write(subtype?: string): Promise<void>;
 		/**
 		 * Output the JSON info about the collected templates
 		 */
-		toJSON(): Promise<any[]>;
+		toJSON(): Promise<EleventyPageJson[]>;
 		executeBuild(to?: "fs" | "fs:templates" | "json"): Promise<any[]>;
 
 		// State modifiers
